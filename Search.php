@@ -50,7 +50,7 @@ color:red;
 if(isset($_POST["search"])){
 	$tel=$_POST["tel"];
 	// 	echo $tel;
-	$link=mysql_connect("localhost","root","123456") or die("数据库连接失败".mysql_error());
+	$link=mysql_connect("localhost","wm","123456") or die("数据库连接失败".mysql_error());
 	mysql_select_db("wm");
 	mysql_query("set names utf8");
 	$sql="select id,tel,pname,state from pusers where tel='{$tel}'";
