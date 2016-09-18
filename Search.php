@@ -3,17 +3,19 @@ header("Content-Type:text/html;charset=utf-8");
 //修改成功
 if(isset($_GET["success"])){
 	echo "<script type='text/javascript'>alert('发放成功!');</script>";
+	header("Location:search.php");
 
 }else if(isset($_GET["error"])){
 	echo "<script type='text/javascript'>alert('发放失败!');</script>";
+	header("Location:search.php");
 }
 ?>
 <html>
 <head>
 <style type="text/css">
 body{
-background-image:url('./images/search.jpg');
-background-size:100% 100%;
+/* background-image:url('./images/search.jpg');
+background-size:100% 100%; */
 }
 #div_form{
 margin-left:30%;margin-top:15px;;
@@ -58,23 +60,24 @@ if(isset($_POST["search"])){
 	echo "<div id='div1'><table id='tb1' align='center'>
 	<tr><th>编号</th><th>手机号</th><th>奖品名称</th><th>是否领取</th><th>发放奖品</th></tr>";
 	if($res){
-		$arr=mysql_fetch_assoc($res);
-		//         header("Location.href='Search.php'");
-		echo "<tr>
+		if(($arr=mysql_fetch_assoc($res))!=false)
+		{
+         echo "<tr>
 		<td>{$arr['id']}</td>
 		<td>{$arr['tel']}</td>
 		<td>{$arr['pname']}</td>
 		<td>{$arr['state']}</td>
 		<td><a href='proPrize.php?id={$arr["id"]}&pname={$arr['pname']}'>发放奖品</a></td>
 		</tr>";
-
-	}else{
-	echo "<script type='text/javascript'>
-		alert('你输入的手机号码有误，请重新输入');
+        }else{
+	        echo "<script type='text/javascript'>
+		     alert('你输入的手机号码有误，请重新输入');
 				</script>";
-		echo "<tr><td colspan='4'>
+		    echo "<tr text-align='center'><td colspan='5'>
 				<h2>该用户没有参与本次活动</h2>
-		</td></tr>";
+		     </td></tr>";
+	     }
+
 	}
 	echo "</table></div>";
 }
