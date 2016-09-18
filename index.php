@@ -19,7 +19,7 @@ if(isset($_POST["btn"])){
             
             if($arr['num']){
                //判断该用户是否已经抽过奖
-               $link1=mysql_connect("localhost","root","123456") or die("数据库连接失败".mysql_error());
+               $link1=mysql_connect("localhost","wm","123456") or die("数据库连接失败".mysql_error());
                mysql_select_db("wm") or die("找不到指定的数据库");
                $sql1="select COUNT(id) as num1 from pusers WHERE tel='{$tel}'";
                $res1=mysql_query($sql1);

@@ -11,6 +11,10 @@ if(isset($_GET['id'])){
 	$res2=mysql_query($sql2);
 	if($res2){
 		$arr=mysql_fetch_assoc($res2);
+<<<<<<< HEAD
+=======
+		//判断该用户是否已经领取奖品
+>>>>>>> 8652cd84bad0117e05f77570070d18657c4c002a
 		if($arr['state']=="未领取"){
 			$sql="update pusers set state='已领取' where id={$uid}";
 			$res=mysql_query($sql);
