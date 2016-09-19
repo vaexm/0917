@@ -38,6 +38,11 @@ echo "2345";
 			 <img class="pointer" name="pointer" src="./images/turnplate-pointer.png"/>
 			<!--<input type="image" class="pointer" src="./images/turnplate-pointer.png" onclick="document.my.submit()"/>-->
 		</div>
+		<div class="rules">
+		<p>小提示:各位用户你好，在参与完抽奖活动之后，请你前往中瑞购物广场一楼找我们的工作人员领取，
+		你只需要告诉我们的工作人员你的手机号，我们就会为你发放你抽到的相应的奖品。如果因为我们的库存问题，会由
+		我们的工作人员为你兑换为其他同类的奖品，请你谅解！</p>
+		</div>
 	</div>
 </body>
 </html>
